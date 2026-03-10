@@ -1,0 +1,20 @@
+{
+  "name": "ai-pm-graphql-api",
+  "version": "1.0.0",
+  "description": "GraphQL API gateway for AI Project Management SaaS using Apollo Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^5.4.0",
+    "axios": "^1.13.6",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "graphql": "^16.13.1"
+  }
+}
