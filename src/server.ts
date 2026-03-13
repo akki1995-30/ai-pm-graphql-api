@@ -19,6 +19,8 @@ const server = new ApolloServer({
   introspection: true  // enables Sandbox + schema introspection in production
 });
 
+// console.log('server--->>>', server);
+
 async function startServer() {
 
   await server.start();
