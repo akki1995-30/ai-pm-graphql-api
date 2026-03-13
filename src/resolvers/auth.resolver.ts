@@ -21,10 +21,7 @@ export const authResolver = {
   Mutation: {
 
     register: async (_: any, { input }: any) => {
-          console.log("input", input);
-          console.log("api----->>>", api);
           const res = await api.post("/auth/register", input);
-          console.log('res', res);
 
       return res.data;
 

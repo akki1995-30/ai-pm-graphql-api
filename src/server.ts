@@ -19,7 +19,6 @@ const server = new ApolloServer({
   introspection: true  // enables Sandbox + schema introspection in production
 });
 
-// console.log('server--->>>', server);
 
 async function startServer() {
 
@@ -36,6 +35,7 @@ async function startServer() {
 
   app.listen(PORT, () => {
     console.log(`🚀 GraphQL running at http://localhost:${PORT}/graphql`);
+    console.log(`📡 NODE_API resolved to: ${process.env.NODE_API ?? "⚠️  NOT SET — requests will fail!"}`);
   });
 
 }
