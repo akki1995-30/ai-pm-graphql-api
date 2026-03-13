@@ -22,7 +22,9 @@ export const authResolver = {
 
     register: async (_: any, { input }: any) => {
           console.log("input", input);
-      const res = await api.post("/auth/register", input);
+          console.log("api----->>>", api);
+          const res = await api.post("/auth/register", input);
+          console.log('res', res);
 
       return res.data;
 
