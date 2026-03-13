@@ -6,7 +6,6 @@ import cors from "cors";
 
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
-import { ApolloServerPluginLandingPageLocalDefault, ApolloServerPluginLandingPageProductionDefault } from '@apollo/server/plugin/landingPage/default';
 
 import { typeDefs } from "./schema";
 import { resolvers } from "./resolvers";
@@ -16,16 +15,8 @@ const app = express();
 
 const server = new ApolloServer({
   typeDefs,
-    resolvers,
-    plugins: [
-    // Install a landing page plugin based on NODE_ENV
-    process.env.NODE_ENV === 'production'
-      ? ApolloServerPluginLandingPageProductionDefault({
-          graphRef: 'my-graph-id@my-graph-variant',
-          footer: false,
-        })
-      : ApolloServerPluginLandingPageLocalDefault({ footer: false }),
-  ],
+  resolvers,
+  introspection: true  // enables Sandbox + schema introspection in production
 });
 
 
