@@ -15,8 +15,11 @@ const app = express();
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  introspection: true  // enables Sandbox + schema introspection in production
 });
+
+// console.log('server--->>>', server);
 
 async function startServer() {
 
