@@ -5,12 +5,13 @@ export const taskResolver = {
   Query: {
 
     tasks: async (_: any, { projectId }: any, { token }: any) => {
-
+          console.log("projectId", projectId);
       const res = await api.get(`/tasks/${projectId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
+          console.log("tasks----data", res);
 
       return res.data;
 
