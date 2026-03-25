@@ -157,6 +157,12 @@ type Mutation {
   # POST /teams          →  Team
   createTeam(input: CreateTeamInput!): Team
 
+  # POST /teams/:teamId/members  →  TeamMember
+  addTeamMember(teamId: ID!, userId: ID!, role: String!): TeamMember
+
+  # DELETE /teams/:teamId/members/:userId
+  removeTeamMember(teamId: ID!, userId: ID!): Boolean
+
   # POST /projects       →  Project
   createProject(input: CreateProjectInput!): Project
 
